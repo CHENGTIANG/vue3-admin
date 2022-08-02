@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog">
+  <v-dialog v-model="dialog" scrollable>
     <v-card min-width="500px">
       <v-card-title> 新增/修改 </v-card-title>
       <v-card-text>
@@ -18,7 +18,7 @@
       <v-card-actions>
         <v-spacer />
         <v-btn color="primary" @click="dialog = false">取消</v-btn>
-        <v-btn color="primary" @click="onSubmit">提交</v-btn>
+        <v-btn color="primary" variant="outlined" @click="onSubmit">提交</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -32,7 +32,7 @@ export default {
       form: {},
       nameRules: [
         (v) => !!v || "Name is required",
-        (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
+        (v) => (v && v.length <= 20) || "Name must be less than 20 characters",
       ],
     };
   },
@@ -48,7 +48,16 @@ export default {
     async onSubmit() {
       const { valid } = await this.$refs.form.validate();
       if (!valid) return;
-      this.dialog = false;
+
+      try {
+        this.$showLoading()
+        await new Promise((resolve) => setTimeout(resolve, 3000))
+        this.dialog = false;
+      } catch (error) {
+        console.error(error)
+      }finally{
+        this.$hideLoading()
+      }
     },
   },
 };
