@@ -12,7 +12,7 @@
             required
           ></v-text-field>
 
-          <v-text-field v-model="form.calories" label="Calories"></v-text-field>
+          <v-text-field v-model="form.description" label="Description"></v-text-field>
         </v-form>
       </v-card-text>
       <v-card-actions>

@@ -7,14 +7,14 @@
       <thead>
         <tr>
           <th class="text-left">Name</th>
-          <th class="text-left">Calories</th>
+          <th class="text-left">Description</th>
           <th class="text-left">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in desserts" :key="item.name">
+        <tr v-for="item in items" :key="item.name">
           <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.description }}</td>
           <td>
             <div class="d-flex">
               <v-btn icon size="small" class="mr-2" @click="onEditClick(item)">
@@ -33,63 +33,34 @@
 </template>
 
 <script>
-import AddOrEditDialog from "./AddOrEditDailog.vue"
+import CRUDAPI from "@/api/CRUDAPI";
+import AddOrEditDialog from "./AddOrEditDailog.vue";
 export default {
   components: {
-    AddOrEditDialog
+    AddOrEditDialog,
   },
   data() {
     return {
-      desserts: [
-        {
-          name: "Frozen Yogurt",
-          calories: 159,
-        },
-        {
-          name: "Ice cream sandwich",
-          calories: 237,
-        },
-        {
-          name: "Eclair",
-          calories: 262,
-        },
-        {
-          name: "Cupcake",
-          calories: 305,
-        },
-        {
-          name: "Gingerbread",
-          calories: 356,
-        },
-        {
-          name: "Jelly bean",
-          calories: 375,
-        },
-        {
-          name: "Lollipop",
-          calories: 392,
-        },
-        {
-          name: "Honeycomb",
-          calories: 408,
-        },
-        {
-          name: "Donut",
-          calories: 452,
-        },
-        {
-          name: "KitKat",
-          calories: 518,
-        },
-      ],
+      items: [],
     };
   },
   methods: {
     onAddClick() {
       this.$refs.dialog.show();
     },
-    onEditClick(item){
-      this.$refs.dialog.show(item)
+    onEditClick(item) {
+      this.$refs.dialog.show(item);
+    },
+  },
+  async created() {
+    try {
+      this.$showLoading();
+      const { items } = await CRUDAPI.find();
+      this.items = items;
+    } catch (error) {
+      this.$error(error);
+    } finally {
+      this.$hideLoading();
     }
   },
 };

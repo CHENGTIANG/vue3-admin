@@ -18,6 +18,9 @@
         </v-card-text>
       </v-card>
     </v-overlay>
+    <v-snackbar v-model="error.snackbar">
+      {{ error.message }}
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -26,11 +29,9 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "App",
-  inject: ["loader"],
+  inject: ["loader", "error"],
   data() {
-    return {
-
-    };
+    return {};
   },
 });
 </script>
