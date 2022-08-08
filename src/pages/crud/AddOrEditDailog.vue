@@ -6,13 +6,15 @@
         <v-form ref="form">
           <v-text-field
             v-model="form.name"
-            :counter="10"
+            :counter="20"
             :rules="nameRules"
             label="Name"
-            required
           ></v-text-field>
 
-          <v-text-field v-model="form.description" label="Description"></v-text-field>
+          <v-textarea
+            v-model="form.description"
+            label="Description"
+          ></v-textarea>
         </v-form>
       </v-card-text>
       <v-card-actions>
@@ -50,13 +52,13 @@ export default {
       if (!valid) return;
 
       try {
-        this.$showLoading()
-        await new Promise((resolve) => setTimeout(resolve, 3000))
+        this.$showLoading();
+        await new Promise((resolve) => setTimeout(resolve, 3000));
         this.dialog = false;
       } catch (error) {
-        console.error(error)
-      }finally{
-        this.$hideLoading()
+        console.error(error);
+      } finally {
+        this.$hideLoading();
       }
     },
   },
