@@ -12,7 +12,6 @@ export default function mockAPIPlugin(): Plugin {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
         if (req.url?.startsWith("/api")) {
-          console.log(req.url);
           let matched = false;
           for (const item of mockItems) {
             const fn = match(item.path);
