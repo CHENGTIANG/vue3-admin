@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import CRUDAPI from "@/api/CRUDAPI";
+import UserAPI from "@/api/UserAPI";
 import AddOrEditDialog from "./AddOrEditDailog.vue";
 export default {
   components: {
@@ -55,7 +55,7 @@ export default {
   async created() {
     try {
       this.$showLoading();
-      const { items } = await CRUDAPI.find();
+      const { items } = await UserAPI.find();
       this.items = items;
     } catch (error) {
       this.$error(error);

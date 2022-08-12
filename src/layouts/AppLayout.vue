@@ -6,8 +6,8 @@
         <v-list-item to="/">
           <v-list-item-title>首頁</v-list-item-title>
         </v-list-item>
-        <v-list-item to="/crud">
-          <v-list-item-title>增刪改查</v-list-item-title>
+        <v-list-item to="/user">
+          <v-list-item-title>用戶管理</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

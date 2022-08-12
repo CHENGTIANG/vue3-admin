@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import AppLayout from "../layouts/AppLayout.vue";
-import Home from "../pages/HomePage.vue";
-import CRUD from "../pages/crud/CRUDPage.vue";
-import Signin from "../pages/SigninPage.vue";
+import HomePage from "../pages/HomePage.vue";
+import UserPage from "../pages/user/UserPage.vue";
+import SigninPage from "../pages/SigninPage.vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/signin",
-    component: Signin,
+    component: SigninPage,
   },
   {
     path: "/",
@@ -14,11 +14,11 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: "/",
-        component: Home,
+        component: HomePage,
       },
       {
-        path: "/crud",
-        component: CRUD,
+        path: "/user",
+        component: UserPage,
       },
     ],
   },
