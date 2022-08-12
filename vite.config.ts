@@ -3,20 +3,11 @@ import vue from "@vitejs/plugin-vue";
 import { resolve } from "path";
 // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
 import vuetify from "vite-plugin-vuetify";
-import { viteMockServe } from "vite-plugin-mock";
+import mockAPI from "./vite-plugin-mock-api";
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vuetify({ autoImport: true }),
-    viteMockServe({
-      prodEnabled: true,
-      injectCode: `
-      import { setupProdMockServer } from './mockProdServer';
-      setupProdMockServer();
-    `,
-    }),
-  ],
+  plugins: [vue(), vuetify({ autoImport: true }), mockAPI()],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
