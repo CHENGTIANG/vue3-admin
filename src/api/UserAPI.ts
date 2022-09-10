@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export class UserAPI {
-  async find(page = 0, size = 10) {
+  async find(page = 1, size = 10) {
     const { data } = await axios.get(`/api/v1/users`, {
       params: {
         page,

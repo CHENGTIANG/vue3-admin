@@ -3,7 +3,7 @@
     <div class="mb-4">
       <v-btn @click="onAddClick"> Add </v-btn>
     </div>
-    <v-table fixed-header height="calc(100vh - 146px)">
+    <v-table fixed-header height="calc(100vh - 196px)">
       <thead>
         <tr>
           <th class="text-left">Name</th>
@@ -30,6 +30,12 @@
         </tr>
       </tbody>
     </v-table>
+    <v-pagination
+      size="small"
+      v-model="page"
+      :length="parseInt(total / size)"
+      @update:modelValue="onPageChange"
+    ></v-pagination>
     <AddOrEditDialog ref="dialog"></AddOrEditDialog>
   </div>
 </template>
@@ -43,6 +49,9 @@ export default {
   },
   data() {
     return {
+      page: 1,
+      size: 10,
+      total: 0,
       items: [],
     };
   },
@@ -53,17 +62,24 @@ export default {
     onEditClick(item) {
       this.$refs.dialog.show(item);
     },
+    async getData() {
+      try {
+        this.$showLoading();
+        const { items, total } = await UserAPI.find(this.page, this.size);
+        this.items = items;
+        this.total = total;
+      } catch (error) {
+        this.$error(error);
+      } finally {
+        this.$hideLoading();
+      }
+    },
+    onPageChange() {
+      this.getData();
+    },
   },
-  async created() {
-    try {
-      this.$showLoading();
-      const { items } = await UserAPI.find();
-      this.items = items;
-    } catch (error) {
-      this.$error(error);
-    } finally {
-      this.$hideLoading();
-    }
+  created() {
+    this.getData();
   },
 };
 </script>
