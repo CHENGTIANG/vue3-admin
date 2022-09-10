@@ -1,6 +1,11 @@
 <template>
   <v-app-bar>
     <v-app-bar-title>Vue3 Admin</v-app-bar-title>
+    <template v-slot:append>
+      <v-avatar>
+        <v-img src="https://picsum.photos/300/300" alt="Avatar"></v-img>
+      </v-avatar>
+    </template>
   </v-app-bar>
   <v-navigation-drawer color="grey-darken-2" permanent>
     <v-list height="100%">
