@@ -14,8 +14,23 @@
         <v-list-item-title>Chart</v-list-item-title>
       </v-list-item>
     </v-list>
+    <template v-slot:append>
+      <div class="pa-2">
+        <v-btn block @click="onSignOut"> Sign out </v-btn>
+      </div>
+    </template>
   </v-navigation-drawer>
   <v-main>
     <router-view></router-view>
   </v-main>
 </template>
+
+<script>
+export default {
+  methods: {
+    onSignOut() {
+      this.$router.replace("/signin");
+    },
+  },
+};
+</script>
