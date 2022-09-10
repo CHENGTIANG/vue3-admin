@@ -1,20 +1,22 @@
 <template>
   <div class="pa-4">
     <div class="mb-4">
-      <v-btn @click="onAddClick"> 新增 </v-btn>
+      <v-btn @click="onAddClick"> Add </v-btn>
     </div>
     <v-table fixed-header height="calc(100vh - 146px)">
       <thead>
         <tr>
           <th class="text-left">Name</th>
-          <th class="text-left">Description</th>
+          <th class="text-left">Username</th>
+          <th class="text-left">Email</th>
           <th class="text-left">Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in items" :key="item.name">
+        <tr v-for="item in items" :key="item.id">
           <td>{{ item.name }}</td>
-          <td>{{ item.description }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
           <td>
             <div class="d-flex">
               <v-btn icon size="small" class="mr-2" @click="onEditClick(item)">

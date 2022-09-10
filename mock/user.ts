@@ -6,7 +6,8 @@ const { items = [] } = Mock.mock({
     {
       "id|+1": 1,
       name: "@name",
-      description: "@paragraph(1)",
+      username: "@name",
+      email: "@email",
     },
   ],
 });
