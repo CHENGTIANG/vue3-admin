@@ -4,10 +4,13 @@
     <v-navigation-drawer color="grey-darken-2" permanent>
       <v-list height="100%">
         <v-list-item to="/">
-          <v-list-item-title>首頁</v-list-item-title>
+          <v-list-item-title>Home</v-list-item-title>
         </v-list-item>
         <v-list-item to="/user">
-          <v-list-item-title>用戶管理</v-list-item-title>
+          <v-list-item-title>User</v-list-item-title>
+        </v-list-item>
+        <v-list-item to="/chart">
+          <v-list-item-title>Chart</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>

@@ -3,6 +3,7 @@ import AppLayout from "../layouts/AppLayout.vue";
 import HomePage from "../pages/HomePage.vue";
 import UserPage from "../pages/user/UserPage.vue";
 import SigninPage from "../pages/SigninPage.vue";
+import ChartPage from "../pages/chart/ChartPage.vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/signin",
@@ -15,6 +16,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: "/",
         component: HomePage,
+      },
+      {
+        path: "/chart",
+        component: ChartPage,
       },
       {
         path: "/user",
