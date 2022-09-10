@@ -1269,10 +1269,10 @@ vue@^3.2.25:
     "@vue/server-renderer" "3.2.37"
     "@vue/shared" "3.2.37"
 
-vuetify@^3.0.0-beta.6:
-  version "3.0.0-beta.6"
-  resolved "https://registry.npmmirror.com/vuetify/-/vuetify-3.0.0-beta.6.tgz#c429837b2facd8cdb2eb7229dd979496e99f57c9"
-  integrity sha512-eL8l4YdpB8ePWex1NkB35nqgWIJCsElTk4XzZEXeN7ECh5Qd1JqPwxEE+JVVC5e1+Ut2EQw+08ouLkeEk2uMow==
+vuetify@^3.0.0-beta.10:
+  version "3.0.0-beta.10"
+  resolved "https://registry.npmmirror.com/vuetify/-/vuetify-3.0.0-beta.10.tgz#2adc31dcf1fb0e01b61ca00ad50eac105e3a0f00"
+  integrity sha512-xs5wTbDiwqygalhoMyZl8x8NssLPoi6rjUIwQ9b+1g5OqZZAbLquHx7CnJj0dP0GapBucQsjxZIAno3Vq6V3sw==
 
 webfontloader@^1.0.0:
   version "1.6.28"
