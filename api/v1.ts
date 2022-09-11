@@ -5,8 +5,7 @@ import setPrototypeOf from "setprototypeof";
 import request, { MockRequest } from "../vite-plugin-mock-api/request";
 import response, { MockResponse } from "../vite-plugin-mock-api/response";
 import parseUrl from "parseurl";
-import { IncomingMessage } from "http";
-export default (req: VercelRequest, res: VercelResponse) => {
+export default async (req: VercelRequest, res: VercelResponse) => {
   if (!req.url) return;
   if (req.url?.startsWith("/api")) {
     let matched = false;
@@ -17,7 +16,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
         if (req.method === item.method) {
           setPrototypeOf(req, request);
           setPrototypeOf(res, response);
-          item.handler(req as MockRequest, res as MockResponse);
+          await item.handler(req as MockRequest, res as MockResponse);
           matched = true;
         }
       }

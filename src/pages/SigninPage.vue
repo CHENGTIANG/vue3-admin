@@ -10,7 +10,11 @@
           <div class="text-h5 mb-6">登入</div>
           <v-text-field variant="outlined" label="用戶名" />
           <v-text-field variant="outlined" label="密碼" />
-          <v-btn block color="primary" to="/">登入</v-btn>
+          <v-btn block color="primary" to="/" class="mb-4">登入</v-btn>
+          <v-btn block @click="onGithabSignIn">
+            <v-icon icon="mdi-github"></v-icon>
+            Sign in with Githab
+          </v-btn>
         </v-container>
       </v-col>
     </v-row>
@@ -18,7 +22,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    onGithabSignIn() {
+      window.location.href = `/api/v1/oauth/login`;
+    },
+  },
+};
 </script>
-
-<style></style>

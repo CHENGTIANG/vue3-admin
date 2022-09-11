@@ -10,7 +10,7 @@ export default function mockAPIPlugin(): Plugin {
   return {
     name: "mock-api",
     configureServer(server) {
-      server.middlewares.use((req, res, next) => {
+      server.middlewares.use(async (req, res, next) => {
         if (req.url?.startsWith("/api")) {
           let matched = false;
           for (const item of mockItems) {
@@ -23,7 +23,7 @@ export default function mockAPIPlugin(): Plugin {
                   query as string
                 ) as MockRequestQuery;
                 setPrototypeOf(res, response);
-                item.handler(req as MockRequest, res as MockResponse);
+                await item.handler(req as MockRequest, res as MockResponse);
                 matched = true;
               }
             }

@@ -18,6 +18,10 @@ export class MockResponse extends ServerResponse {
     this.end();
     return this;
   }
+  redirect(url) {
+    this.setHeader("Location", url);
+    this.end();
+  }
 }
 
 export default MockResponse.prototype;

@@ -6,6 +6,7 @@ import SigninPage from "../pages/SigninPage.vue";
 import ChartPage from "../pages/chart/ChartPage.vue";
 import RichTextEditorPage from "../pages/richText/RichTextEditorPage.vue";
 import VideoPlayerPage from "../pages/video/VideoPlayerPage.vue";
+import AuthPage from "../pages/AuthPage.vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/signin",
@@ -36,6 +37,10 @@ const routes: RouteRecordRaw[] = [
         component: VideoPlayerPage,
       },
     ],
+  },
+  {
+    path: "/auth",
+    component: AuthPage,
   },
 ];
 

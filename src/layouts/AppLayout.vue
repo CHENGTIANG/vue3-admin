@@ -40,6 +40,7 @@
 export default {
   methods: {
     onSignOut() {
+      sessionStorage.removeItem("access_token");
       this.$router.replace("/signin");
     },
   },
