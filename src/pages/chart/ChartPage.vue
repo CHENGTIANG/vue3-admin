@@ -1,7 +1,7 @@
 <template>
   <div class="pa-4">
     <v-row>
-      <v-col cols="3">
+      <v-col cols="12" md="6">
         <v-card>
           <v-card-title> Bar </v-card-title>
           <v-card-text>
@@ -9,32 +9,7 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="3">
-        <v-card>
-          <v-card-title> Pie </v-card-title>
-          <v-card-text>
-            <PieChart></PieChart>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="3">
-        <v-card>
-          <v-card-title> Radar </v-card-title>
-          <v-card-text>
-            <RadarChart></RadarChart>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="3">
-        <v-card>
-          <v-card-title> Bubble </v-card-title>
-          <v-card-text>
-            <BubbleChart></BubbleChart>
-          </v-card-text>
-        </v-card>
-      </v-col>
-
-      <v-col cols="6">
+      <v-col cols="12" md="6">
         <v-card>
           <v-card-title> Line </v-card-title>
           <v-card-text>
@@ -42,7 +17,32 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" md="6" lg="3">
+        <v-card>
+          <v-card-title> Radar </v-card-title>
+          <v-card-text>
+            <RadarChart></RadarChart>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols="12" md="6" lg="3">
+        <v-card>
+          <v-card-title> Pie </v-card-title>
+          <v-card-text>
+            <PieChart></PieChart>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card>
+          <v-card-title> Bubble </v-card-title>
+          <v-card-text>
+            <BubbleChart></BubbleChart>
+          </v-card-text>
+        </v-card>
+      </v-col>
+      <v-col cols="12" md="6">
         <v-card>
           <v-card-title> Polar Area </v-card-title>
           <v-card-text>
@@ -51,7 +51,7 @@
         </v-card>
       </v-col>
 
-      <v-col cols="12">
+      <v-col cols="12" lg="6">
         <v-card>
           <v-card-title> Scatter </v-card-title>
           <v-card-text>
@@ -80,9 +80,6 @@ export default {
     LineChart,
     PolarAreaChart,
     ScatterChart,
-  },
-  data() {
-    return {};
   },
 };
 </script>
