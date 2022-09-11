@@ -18,6 +18,9 @@
       <v-list-item to="/chart">
         <v-list-item-title>Chart</v-list-item-title>
       </v-list-item>
+      <v-list-item to="/rich-text-editor">
+        <v-list-item-title>Rich Text Editor</v-list-item-title>
+      </v-list-item>
     </v-list>
     <template v-slot:append>
       <div class="pa-2">

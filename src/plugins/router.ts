@@ -4,6 +4,7 @@ import HomePage from "../pages/HomePage.vue";
 import UserPage from "../pages/user/UserPage.vue";
 import SigninPage from "../pages/SigninPage.vue";
 import ChartPage from "../pages/chart/ChartPage.vue";
+import RichTextEditorPage from "../pages/richText/RichTextEditorPage.vue";
 const routes: RouteRecordRaw[] = [
   {
     path: "/signin",
@@ -24,6 +25,10 @@ const routes: RouteRecordRaw[] = [
       {
         path: "/user",
         component: UserPage,
+      },
+      {
+        path: "/rich-text-editor",
+        component: RichTextEditorPage,
       },
     ],
   },
