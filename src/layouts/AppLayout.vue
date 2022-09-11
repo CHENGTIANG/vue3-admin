@@ -21,6 +21,9 @@
       <v-list-item to="/rich-text-editor">
         <v-list-item-title>Rich Text Editor</v-list-item-title>
       </v-list-item>
+      <v-list-item to="/video-player">
+        <v-list-item-title>Video Player</v-list-item-title>
+      </v-list-item>
     </v-list>
     <template v-slot:append>
       <div class="pa-2">
