@@ -25,5 +25,8 @@ export default defineConfig(({ mode }) => {
         "@": resolve(__dirname, "./src"),
       },
     },
+    server: {
+      port: 3000,
+    },
   };
 });
