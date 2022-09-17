@@ -13,7 +13,7 @@
   </v-app-bar>
   <v-navigation-drawer color="grey-darken-2" v-model="drawer">
     <v-list height="100%">
-      <v-list-item to="/">
+      <v-list-item to="/home">
         <v-list-item-title>Home</v-list-item-title>
       </v-list-item>
       <v-list-item to="/user">

@@ -15,9 +15,10 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/",
     component: AppLayout,
+    redirect: "/home",
     children: [
       {
-        path: "/",
+        path: "/home",
         component: HomePage,
       },
       {
