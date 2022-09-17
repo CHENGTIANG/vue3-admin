@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar>
+  <v-app-bar color="rgba(255, 255, 255, 0.8)" class="app-bar">
     <v-app-bar-nav-icon
       variant="text"
       @click.stop="drawer = !drawer"
@@ -55,3 +55,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.app-bar {
+  backdrop-filter: blur(8px);
+}
+</style>
